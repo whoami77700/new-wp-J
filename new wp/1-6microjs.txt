@@ -1,0 +1,261 @@
+1.mathematical expressions
+<html>
+    <head>
+        <script>
+    function fun()
+    {
+    var num=document.getElementById("exp").value;
+    document.getElementById("result").value=eval(num);
+    }
+</script>
+</head>
+<body>
+<label>Enter the number</label><input type="text" id="exp"><br><br>
+<input type="button" onclick="fun()" value="express the validation"><br><br>
+result of number <input type="text" id="result"> 
+</body>
+</html>
+2.sum of n
+<html>
+    <head>
+        <title>sum of n natural numbers</title>
+        <script type="text/javascript">
+        function sum()
+        {
+            var num = window.prompt("enter the value of n");
+            var n = parseInt(num);
+            var sum = (n*(n+1)/2);
+            window.alert("sum of first " + n +" natural numbers is :"+sum);
+        }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type = "button" value = "find sum" onclick = "sum()"/>
+            </form>
+    </body>
+</html>
+3.student info 
+<html>
+    <head>
+        <title>student information</title>
+        <script type="text/javascript">
+        function sem()
+        {
+            var name=document.getElementById("name").value;
+            var cls=document.getElementById("cls").value;
+            var mark1=parseInt(document.getElementById("sub1").value);
+            var mark2=parseInt(document.getElementById("sub2").value);
+            var mark3=parseInt(document.getElementById("sub3").value);
+            var total=mark1+mark2+mark3;
+            var avg=total/3;
+            if (avg>=60)
+            {
+                grade="A";
+                result="first class";
+            }
+            if(avg<60 && avg>50)
+                {
+                    grade="B";
+                    result="second class";
+                }
+            document.write("<b><u>Result</b></u></br>");
+            document.write("<b>Name:"+name+"</b></br>");
+            document.write("<b>class:"+cls+"</b></br>");
+            document.write("<B>total:"+total+"</b></br>");
+            document.write("<B>Average:"+avg+"</b></br>");
+            document.write("<B>grade:"+grade+"</b></br>");
+            document.write("<B>result:"+result+"</b></br>");
+        }
+            </script>
+    </head>
+    <body>
+        <form>
+            <table border="5">
+                <th colspan="2">student information</th>
+                <tr>
+                    <td>
+                        Student name
+                    </td>
+                    <td>
+                        <input type="text" id="name">
+                    </td>
+                </tr>
+<tr>
+    <td>
+        class
+    </td>
+    <td><input type="text" id="cls"></td>
+</tr>
+<tr>
+    <td>
+        mark1
+    </td>
+    <td>
+        <input type="text" id="sub1">
+    </td>
+</tr>
+<tr>
+<td>
+    mark2
+</td>
+<td>
+    <input type="text" id="sub2">
+</td>
+</tr>
+<tr>
+<td>
+    mark3
+</td>
+<td>
+    <input type="text" id="sub3"> 
+</td>
+</tr>
+</table>
+<input type="button" value="result" onclick="sem()"/>
+</form>
+</body>
+</html>
+4.basic animation
+<html>
+<head>
+	<title>gfg</title>
+	<style type=text/css>
+      #layer1{position:absolute;top:100px;left:50px;}
+      #layer2{position:absolute;top:100px;left:175px;}
+	</style>
+<script type="text/javascript">
+  function moving(layer)
+  {
+  var top=window.prompt("enter top value");
+  var left=window.prompt("enter left value");  
+  document.getElementById(layer).style.top+'px';
+  document.getElementById(layer).style.left+'px';
+  }
+  </script>
+  </head>
+<body>
+	<div id="layer1"> <img src="1.jpg" onclick="moving(layer1)"> </div>
+	<div id="layer2"> <img src="th.jpeg" onclick="moving(layer2)"> </div>
+</body>
+</html>
+5.date
+<html>
+    <head>
+      <title>date</title>
+
+        <script type= "text/javascript">
+     var days = ["first" to "thirty first"];
+     var months = ["jan" to "dec"];
+     var year = "two thousand twenty four";
+     var dateobj = new Date();
+     var m = dateobj.getMonth();
+     var y = dateobj.getFullYear();
+     var d = dateobj.getDate();
+       if (y==2024)
+         alert("Todays date : "+date[d-1]+" " +month[M]+" " +year);
+    else 
+       alert("today date is : "+d+" " +M+" +y);
+   
+    </script>
+  </head>
+</html>
+
+6.employee info
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Payroll Calculator</title>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Employee Payroll Calculator</h2>
+
+  <form id="payrollForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="basicSalary">Basic Salary:</label>
+    <input type="number" id="basicSalary" name="basicSalary" required>
+
+    <label for="daPercentage">DA Percentage:</label>
+    <input type="number" id="daPercentage" name="daPercentage" required>
+
+    <label for="hraPercentage">HRA Percentage:</label>
+    <input type="number" id="hraPercentage" name="hraPercentage" required>
+
+    <label for="pfPercentage">PF Percentage:</label>
+    <input type="number" id="pfPercentage" name="pfPercentage" required>
+
+    <label for="taxPercentage">Tax Percentage:</label>
+    <input type="number" id="taxPercentage" name="taxPercentage" required>
+
+    <button type="button" onclick="calculatePayroll()">Calculate</button>
+  </form>
+
+  <h3>Results:</h3>
+  <p id="result"></p>
+
+  <script>
+    function calculatePayroll() {
+      const name = document.getElementById("name").value;
+      const basicSalary = parseFloat(document.getElementById("basicSalary").value);
+      const daPercentage = parseFloat(document.getElementById("daPercentage").value);
+      const hraPercentage = parseFloat(document.getElementById("hraPercentage").value);
+      const pfPercentage = parseFloat(document.getElementById("pfPercentage").value);
+      const taxPercentage = parseFloat(document.getElementById("taxPercentage").value);
+
+      const da = (daPercentage / 100) * basicSalary;
+      const hra = (hraPercentage / 100) * basicSalary;
+      const pf = (pfPercentage / 100) * basicSalary;
+      const grossPay = basicSalary + da + hra;
+      const tax = (taxPercentage / 100) * basicSalary;
+      const deduction = pf + tax;
+      const netPay = grossPay - deduction;
+
+      const resultText = `
+        Name: ${name}
+        DA: ${da.toFixed(2)}
+        HRA: ${hra.toFixed(2)}
+        PF: ${pf.toFixed(2)}
+        Gross Pay: ${grossPay.toFixed(2)}
+        Tax: ${tax.toFixed(2)}
+        Deduction: ${deduction.toFixed(2)}
+        Net Pay: ${netPay.toFixed(2)}
+      `;
+      document.getElementById("result").innerText = resultText;
+    }
+  </script>
+</body>
+</html>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
